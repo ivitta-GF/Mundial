@@ -9,9 +9,9 @@ package personas;
  * @author PC
  */
 public class Personas {
-    private String nombre;
-    private String fecha;
-    private String nacionalidad;
+    protected String nombre;
+    protected String fecha;
+    protected String nacionalidad;
 
     public String getNombre() {
         return nombre;
