@@ -33,6 +33,14 @@ public class Mundial {
     public void setPaís(String país) {
         this.país = país;
     }
+
+    @Override
+    public String toString() {
+        return "===Mundial===" + "\n {" +
+                "\n nombre del mundial: " +
+                nombreM + " \n año: " + year 
+                + "País: " + país + "}";
+    }
     
     
     

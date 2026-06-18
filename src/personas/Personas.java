@@ -32,6 +32,16 @@ public class Personas {
     public void setNacionalidad(String nacionalidad) {
         this.nacionalidad = nacionalidad;
     }
+
+    @Override
+    public String toString() {
+        return "===Personas===" + 
+                "\n {" 
+                + "\n nombre=" 
+                + nombre + "\n fecha=" + 
+                fecha + "\nnacionalidad=" + nacionalidad 
+                + '}';
+    }
     
     
     
