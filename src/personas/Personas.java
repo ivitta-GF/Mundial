@@ -33,6 +33,12 @@ public class Personas {
     public int getEdad(){
         return Period.between(fecha, LocalDate.now()).getYears();
     }
+
+    public Personas(String nombre, LocalDate fecha, String nacionalidad) {
+        this.nombre = nombre;
+        this.fecha = fecha;
+        this.nacionalidad = nacionalidad;
+    }
     
     
     
