@@ -4,44 +4,37 @@
  */
 package personas;
 
+import java.time.LocalDate;
+
+import java.time.Period;
+
 /**
  *
  * @author PC
  */
 public class Personas {
     protected String nombre;
-    protected String fecha;
+    protected LocalDate fecha;
     protected String nacionalidad;
 
     public String getNombre() {
         return nombre;
     }
 
-    public String getFecha() {
+    public LocalDate getFecha() {
         return fecha;
     }
 
     public String getNacionalidad() {
         return nacionalidad;
     }
-
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
+   
+ 
+    public int getEdad(){
+        return Period.between(fecha, LocalDate.now()).getYears();
     }
-
-    public void setNacionalidad(String nacionalidad) {
-        this.nacionalidad = nacionalidad;
-    }
-
-    @Override
-    public String toString() {
-        return "===Personas===" + 
-                "\n {" 
-                + "\n nombre=" 
-                + nombre + "\n fecha=" + 
-                fecha + "\nnacionalidad=" + nacionalidad 
-                + '}';
-    }
+    
+    
     
     
     
