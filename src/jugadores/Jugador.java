@@ -3,6 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package jugadores;
+import java.time.LocalDate;
 import personas.Personas;
 /**
  * 
@@ -25,7 +26,7 @@ public class Jugador extends Personas{
     public void setPosicion(posicionJugador posicion) {
         this.posicion = posicion;
     }
-    public Jugador (String nombre, String nacionalidad, String fecha, int numero, posicionJugador posicion){
+    public Jugador (String nombre, String nacionalidad, LocalDate fecha, int numero, posicionJugador posicion){
         this.nombre= nombre;
         this.nacionalidad= nacionalidad;
         this.fecha= fecha;
