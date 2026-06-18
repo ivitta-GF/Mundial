@@ -27,9 +27,7 @@ public class Jugador extends Personas{
         this.posicion = posicion;
     }
     public Jugador (String nombre, String nacionalidad, LocalDate fecha, int numero, posicionJugador posicion){
-        this.nombre= nombre;
-        this.nacionalidad= nacionalidad;
-        this.fecha= fecha;
+        super(nombre,fecha,nacionalidad);
         this.numero= numero;
         this.posicion=posicion;
     }

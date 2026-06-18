@@ -21,9 +21,7 @@ public class arbitro extends Personas {
     }
 
     public arbitro(String nombre, String nacionalidad, LocalDate fecha, String categoria){
-        this.nombre=nombre;
-        this.nacionalidad= nacionalidad;
-        this.fecha= fecha;
+        super(nombre,fecha,nacionalidad);
         this.categoria = categoria;
     }
     
