@@ -3,8 +3,8 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package entrenadores;
-import java.time.LocalDate;
 import personas.Personas;
+import java.time.LocalDate;
 
 /**
  *
@@ -12,32 +12,28 @@ import personas.Personas;
  */
 public class Entrenador extends Personas {
     
-    private int añosExperiencia;
+    private int anosExperiencia;
 
-    public int getAñosExperiencia() {
-        return añosExperiencia;
-    }
-    public void setAñosExperiencia(int añosExperiencia) {
-        this.añosExperiencia = añosExperiencia;
+    public int getAnosExperiencia() {
+        return anosExperiencia;
     }
 
-    public Entrenador(String nombre, LocalDate fecha, String nacionalidad, int añosExperiencia) {
-        this.nombre= nombre;
-        this.fecha= fecha ;
-        this.nacionalidad= nacionalidad;
-        this.añosExperiencia = añosExperiencia;
+    public void setAnosExperiencia(int anosExperiencia) {
+        this.anosExperiencia = anosExperiencia;
     }
-    
+    public Entrenador(int anosExperiencia, String nombre, LocalDate fecha, String nacionalidad){
+        super(nombre, fecha, nacionalidad);
+        this.anosExperiencia= anosExperiencia;
+    }
 
     @Override
     public String toString() {
         return "Entrenador{" + 
-                "\nNombre: " + getNombre() + 
-                "\nfecha: " + getFecha() +
-                "\nNacionalidad: " + getNacionalidad() +
-                "\nAños Experiencia: " + añosExperiencia +
-                "\n}";
-    }
-   
+                "\nNombre: "+ getNombre()+"Nacionalidad: "+ getNacionalidad()+"Fecha: "+ getFecha()+"Años de Experiencia: "+anosExperiencia;
+    } 
+    
     
 }
+   
+    
+
