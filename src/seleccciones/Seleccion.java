@@ -3,11 +3,76 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package seleccciones;
+import entrenadores.Entrenador;
+import jugadores.Jugador;
 
 /**
  *
  * @author Stef
  */
 public class Seleccion {
+    public enum Grupo{
+        A, B, C, D, E, F, G
+    }
+    private String nombre;
+    private Grupo grupo;
+    private Entrenador entrenador;
+    private Jugador[] jugadores;
+    private int contador;
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public Grupo getGrupo() {
+        return grupo;
+    }
+
+    public Entrenador getEntrenador() {
+        return entrenador;
+    }
+
+    public Jugador[] getJugadores() {
+        return jugadores;
+    }
+
+    public void setGrupo(Grupo grupo) {
+        this.grupo = grupo;
+    }
+
+    public void setEntrenador(Entrenador entrenador) {
+        this.entrenador = entrenador;
+    }
+
+    public Seleccion(String nombre, Grupo grupo, Entrenador entrenador, int capacidad) {
+        this.nombre = nombre;
+        this.grupo = grupo;
+        this.entrenador = entrenador;
+        this.jugadores = new Jugador[capacidad];
+        this.contador = 0;
+    }
+    
+    public void agregarJugador(Jugador jugador){
+        if (contador < jugadores.length){
+        jugadores[contador]= jugador;
+        contador++;
+        }
+    }
+    public void eliminarJugador(Jugador jugador){
+         for(int i = 0; i < contador; i++){
+            if(jugadores[i].equals(jugador)){
+                jugadores[i] = jugadores[contador - 1];
+                jugadores[contador - 1] = null;
+                contador--;
+                break;
+            }
+        }
+    }
+
+    @Override
+    public String toString() {
+        return "Seleccion{" + "nombre: " + nombre + "grupo: " + grupo + ", entrenador: "
+                + entrenador + ", jugadores: " + jugadores + ", contador: " + contador + '}';
+    }  
     
 }
