@@ -3,7 +3,8 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
  */
 package mundial;
-
+import partidos.Partido;
+import seleccciones.Seleccion;
 /**
  *
  * @author PC
@@ -13,6 +14,9 @@ public class Mundial {
     private String nombreM;
     private double year;
     private String país;
+  int cantidad = 0;
+      private Seleccion[] selecciones;
+      private Partido[] partidos;
 
     public String getNombreM() {
         return nombreM;
@@ -34,6 +38,50 @@ public class Mundial {
         this.país = país;
     }
 
+    public Seleccion[] getSelecciones(){
+        return selecciones;
+    }
+
+    public Mundial(String nombreM, double year, String país, Seleccion[] selecciones, int cantidad,Partido[] partidos) {
+        this.nombreM = nombreM;
+        this.year = year;
+        this.país = país;
+        this.selecciones = selecciones;
+        this.partidos= partidos;
+        this.cantidad= 0;
+    }
+ 
+    public void agregarSeleccion (Seleccion seleccion){
+        for(int i = 0; i<selecciones.length; i++){
+            if(selecciones[i]==null){
+                selecciones[i]= seleccion;
+                break;
+            }
+        }        
+    }
+    
+    public void eliminarSeleccion(Seleccion seleccion){
+        for(int i = 0; i< selecciones.length; i--){
+            if(selecciones[i]==seleccion){
+                selecciones[i]=null;
+                break;
+            }
+        }
+    }
+    
+    public Seleccion buscarSeleccion(Seleccion seleccion, String nombre)
+    { 
+        for (int i = 0; i< selecciones.length;i++){
+            if (this.selecciones[i].getNombre().equals(nombre)){
+                return this.selecciones[i];
+               
+            }else {
+            }
+    }
+        return null;
+        
+    } 
+    
     @Override
     public String toString() {
         return "===Mundial===" + "\n {" +

@@ -69,6 +69,8 @@ public class Seleccion {
         }
     }
 
+  
+    
     @Override
     public String toString() {
         return "Seleccion{" + "nombre: " + nombre + "grupo: " + grupo + ", entrenador: "
