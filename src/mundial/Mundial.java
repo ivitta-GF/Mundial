@@ -82,6 +82,105 @@ public class Mundial {
         
     } 
     
+    public int cantidadSelecciones(){
+    int cantidad = 0;
+
+    for(int i = 0; i < selecciones.length; i++){
+        if(selecciones[i] != null){
+            cantidad++;
+        }
+    }
+
+    return cantidad;
+}
+
+public boolean verificarSeleccionInscrita(String nombre){
+    for(int i = 0; i < selecciones.length; i++){
+        if(selecciones[i] != null &&
+           selecciones[i].getNombre().equals(nombre)){
+            return true;
+        }
+    }
+
+    return false;
+}
+
+public Seleccion[] obtenerSeleccionesPorGrupo(String grupo){
+    Seleccion[] resultado = new Seleccion[selecciones.length];
+
+    for(int i = 0; i < selecciones.length; i++){
+        if(selecciones[i] != null &&
+           selecciones[i].getGrupo().equals(grupo)){
+            resultado[i] = selecciones[i];
+        }
+    }
+
+    return resultado;
+}
+
+public void agregarPartido(Partido partido){
+    for(int i = 0; i < partidos.length; i++){
+        if(partidos[i] == null){
+            partidos[i] = partido;
+            break;
+        }
+    }
+}
+
+public void eliminarPartido(Partido partido){
+    for(int i = 0; i < partidos.length; i++){
+        if(partidos[i] == partido){
+            partidos[i] = null;
+            break;
+        }
+    }
+}
+
+public int cantidadPartidos(){
+    int cantidad = 0;
+
+    for(int i = 0; i < partidos.length; i++){
+        if(partidos[i] != null){
+            cantidad++;
+        }
+    }
+
+    return cantidad;
+}
+
+public Partido[] obtenerPartidosPorSeleccion(Seleccion seleccion){
+    Partido[] resultado = new Partido[partidos.length];
+
+    for(int i = 0; i < partidos.length; i++){
+        if(partidos[i] != null &&
+           (partidos[i].getSeleccionLocal() == seleccion ||
+            partidos[i].getSeleccionVisitante() == seleccion)){
+            resultado[i] = partidos[i];
+        }
+    }
+
+    return resultado;
+}
+
+public Partido[] buscarPartidosPorFecha(String fecha){
+    Partido[] resultado = new Partido[partidos.length];
+
+    for(int i = 0; i < partidos.length; i++){
+        if(partidos[i] != null &&
+           partidos[i].getFecha().equals(fecha)){
+            resultado[i] = partidos[i];
+        }
+    }
+
+    return resultado;
+}
+    
+    
+    
+    
+    
+    
+    
     @Override
     public String toString() {
         return "===Mundial===" + "\n {" +
