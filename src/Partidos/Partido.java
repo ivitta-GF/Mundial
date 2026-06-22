@@ -86,11 +86,93 @@ public String toString() {
 }
 public void agregarArbitro(arbitro arbitro) {
 
+    int pos = buscarEspacioDisponible();
+
+    if(pos != -1){
+        arbitros[pos] = arbitro;
+    }
+
 }
+
+private int buscarEspacioDisponible(){
+
+    for(int i = 0; i < arbitros.length; i++){
+
+        if(arbitros[i] == null){
+            return i;
+        }
+
+    }
+
+    return -1;
+}
+
 
 public void eliminarArbitro(arbitro arbitro) {
 
+    int pos = buscarArbitro(arbitro);
+
+    if(pos != -1){
+        arbitros[pos] = null;
+    }
+
+}
+
+private int buscarArbitro(arbitro arbitro){
+
+    for(int i = 0; i < arbitros.length; i++){
+
+        if(arbitros[i] == arbitro){
+            return i;
+        }
+
+    }
+
+    return -1;
+}
+    
+
+
+public arbitro BuscarArbitroNombre(String nombre){
+
+    for(int i = 0; i < arbitros.length; i++){
+
+        if(arbitros[i] != null &&
+           arbitros[i].getNombre().equals(nombre)){
+
+            return arbitros[i];
+        }
+
+    }
+
+    return null;
+}
+    
+    
+
+   public int  ContarArbitrosAsignados (arbitro arbitro){   
+      int cont=0;
+      for(int i = 0; i < arbitros.length; i++){
+       if(arbitros[i] != null) {
+       cont++;
+       }
+      }
+      
+   return cont;   
+}
+   
+
+public boolean ArbitroRegistrado (arbitro arbitro ){
+for(int i = 0; i < arbitros.length; i++){
+if (arbitros[i] != null && arbitros[i].equals(arbitro)) {
+            return true;
+        }
+    }
+
+    return false;
 }
 }
+
+
 
 
